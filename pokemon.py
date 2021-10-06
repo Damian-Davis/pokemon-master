@@ -35,7 +35,9 @@ class Pokemon:
             print(f"{self.name} fainted!")
     
     def loseHealth(self, damage):
+        # Deducts heath from a pokemon and prints the current health reamining
         #Health cannot go below 0
+        #Makes sure the health doesn't become negative. Knocks out the pokemon.
          if self.currentHealth-damage<=0:   
             self.knockOut()
          else:
@@ -44,6 +46,8 @@ class Pokemon:
     
     def gainHealth(self, recovery):
         #Health cannot go over max health
+         # Adds to a pokemon's heath
+        # If a pokemon goes from 0 heath, then revive it
          if recovery+self.currentHealth>=self.maxHealth:
              self.currentHealth=self.maxHealth
          else:
